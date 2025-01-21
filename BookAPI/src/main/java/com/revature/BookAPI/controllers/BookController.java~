@@ -34,7 +34,6 @@ public class BookController {
         @GetMapping("/recs")
         public ResponseEntity<String[]> getBookRecs() {
                 RestTemplate restTemplate = new RestTemplate();
-                String[] recs = restTemplate.getForObject("http://localhost:8081/recs", String[].class);
-                return ResponseEntity.ok(recs);
+                restTemplate.getForObject("http://localhost:8081/recs", String[].class);
         }
 }
